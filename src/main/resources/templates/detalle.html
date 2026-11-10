@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Detalle</title></head>
+<body>
+  <div th:if="${producto != null}">
+    <h1 th:text="${producto.nombre}"></h1>
+    <p>ID: <span th:text="${producto.id}"></span></p>
+    <p>Precio: <span th:text="${producto.precio}"></span></p>
+    <p>Categoria: <span th:text="${producto.categoria}"></span></p>
+  </div>
+  <p th:if="${producto == null}">Producto no encontrado.</p>
+  <a th:href="@{/vistas/productos}">Volver a la lista</a>
+</body>
+</html>

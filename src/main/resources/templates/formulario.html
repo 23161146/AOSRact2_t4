@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Formulario</title></head>
+<body>
+  <h1>Nuevo producto</h1>
+  <form th:action="@{/vistas/formulario}" th:object="${producto}" method="post">
+    <p><input type="text" th:field="*{nombre}" placeholder="Nombre"></p>
+    <p><input type="number" step="0.01" th:field="*{precio}" placeholder="Precio"></p>
+    <p><input type="text" th:field="*{categoria}" placeholder="Categoria"></p>
+    <button type="submit">Enviar</button>
+  </form>
+  <a th:href="@{/vistas/productos}">Volver a la lista</a>
+</body>
+</html>

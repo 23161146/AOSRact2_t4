@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Productos</title></head>
+<body>
+  <h1 th:text="${proyecto}">Proyecto</h1>
+  <p>Autor: <span th:text="${autor}">autor</span></p>
+
+  <p>
+    Filtrar:
+    <a th:href="@{/vistas/productos}">Todos</a> |
+    <a th:href="@{/vistas/productos(categoria='Tecnologia')}">Tecnologia</a> |
+    <a th:href="@{/vistas/productos(categoria='Hogar')}">Hogar</a>
+  </p>
+
+  <ul>
+    <li th:each="p : ${productos}">
+      <a th:href="@{/vistas/productos/{id}(id=${p.id})}"
+         th:text="${p.nombre} + ' - $' + ${p.precio} + ' (' + ${p.categoria} + ')'"></a>
+    </li>
+  </ul>
+
+  <a th:href="@{/vistas/formulario}">Agregar producto</a>
+</body>
+</html>
